@@ -1,0 +1,235 @@
+*{
+    background: #E5E5E5;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+}
+.logo{
+    padding-top: 10px;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 8%;
+}
+main{
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    justify-content: center;
+}
+.entrada-texto{
+    resize: none;
+    margin-top: 90px;
+    color: darkblue;
+    border: none;
+}
+.entrada-texto::placeholder{
+    color: darkblue;
+}
+.entrada-texto:focus{
+    outline:  none;
+}
+.salida-texto{
+    resize: none;
+    margin-left: 98px;
+    padding: 20px;
+    padding-bottom: 120px;
+    height: 612px;
+    color: darkblue;
+    background: white;
+    background-image: url(imagenes/buscar.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 32px;
+    box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+.salida-texto:focus{
+    outline: none;
+}
+.restriccion{
+    color: grey;
+    font-size: 16px;
+}
+.botones{
+    display: flex;
+    margin-top: 18px;
+}
+.encriptar{
+    color: #D8DFE8;
+    background: darkblue;
+    border: 1px solid darkblue;
+    border-radius: 25px;
+    cursor: pointer;
+    height: 67px;
+    width: 328px;
+}
+.desencriptar{
+    color: darkblue;
+    background: #D8DFE8;
+    border: 1px solid darkblue;
+    border-radius: 25px;
+    cursor: pointer;
+    height: 67px;
+    margin-left: 30px;
+    width: 328px;
+}
+.dinamico{
+    background: transparent;
+    margin-left: 120px;
+    margin-top: -240px;
+    width: 360px;
+    position: absolute;
+    text-align: center;
+}
+.texto1{
+    font-size: 24px;
+    font-weight: bold;
+    line-height: initial;
+    background: transparent;
+}
+.texto2{
+    font-size: 16px;
+    line-height: initial;
+    background: transparent;
+}
+.copiar{
+    color: darkblue;
+    background: #D8DFE8;
+    border: 1px solid darkblue;
+    border-radius: 25px;
+    cursor: pointer;
+    height: 67px;
+    width: 336px;
+    margin-top: 120px;
+}
+.encriptar:hover, .desencriptar:hover, .copiar:hover{
+    background: #555;
+    color: white;
+}
+.anuncio{
+    display: none;
+    width: 300px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 80px;
+    left: 100px;
+    margin-left: -75px;
+    opacity: .6;
+}
+footer{
+    text-align: center;
+    background-color: darkblue;
+    padding: 15px;
+}
+.copyright{
+    color: #D8DFE8;
+    background: transparent;
+    font-size: 15px;
+    margin: 10px;
+}
+/* Laptop */
+@media screen and (max-width: 1366px) {
+    main{
+        margin-left: 0px;
+    }
+    .entrada-texto{
+        margin-top: 50px;
+        width: 686px;
+        height: 400px;
+    }
+    .botones, .salida-texto{
+        margin-top: 0px;
+    }
+    .salida-texto{
+        height: 550px;
+    }
+    .dinamico{
+        margin-top: -160px;
+    }
+    .copiar{
+        margin-top: 60px;
+    }
+}
+/* Tablet */
+@media screen and (max-width: 768px) {
+   .logo{
+    width: 15%;
+    margin-top: 40px;
+   } 
+   main{
+    display: block;
+    margin: 0px 30px;
+   }
+   .entrada-texto{
+    margin-top: 60px;
+    width: 100%;
+    height: 700px;
+   }
+   .botones{
+    margin-top: 0px;
+   }
+   .salida-texto{
+    margin: 40px 0px;
+    width: 655px;
+    height: 300px;
+    background: white;
+   }
+   .dinamico{
+    margin-top: -250px;
+    margin-left: 0px;
+    width: 655px;
+   }
+   .texto1{
+    margin-bottom: .5em;
+   }
+   .copiar{
+    margin-top: 100px;
+   }
+   .anuncio{
+    margin-left: 70px;
+   }
+}
+/* Celular */
+@media screen and (max-width: 375px) {
+    .logo{
+        margin-top: 30px;
+        width: 30%;
+    }
+    .entrada-texto{
+        margin-top: 20px;
+        height: 340px;
+    }
+    .botones{
+        display: block;
+        margin-top: 0px;
+    }
+    .encriptar, .desencriptar{
+        width: 100%;
+    }
+    .desencriptar{
+        margin-left: 0px;
+        margin-top: 15px;
+    }
+    .salida-texto, .dinamico, .copiar{
+        width: 295px;
+    }
+    .dinamico{
+        margin-left: 10px;
+    }
+    .salida-texto{
+        padding: 10px;
+        padding-bottom: 120px;
+        height: 180px;
+    }
+    .anuncio{
+        width: 285px;
+        margin-left: -100px;
+    }
+       
+}

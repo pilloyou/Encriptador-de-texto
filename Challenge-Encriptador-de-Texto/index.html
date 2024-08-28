@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)file:///C:/Users/Lenovo/Desktop/encriptador/Challenge-Encriptador-de-Texto-0.1.1/index.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width">
+        <title>Challenge - Encriptador de texto</title>
+        <link rel="shortcut icon" href="file:///C:/Users/Lenovo/Desktop/encriptador/Challenge-Encriptador-de-Texto-0.1.1/imagenes/icono.png">
+        <link rel="stylesheet" href="./index_files/reset.css">
+        <link rel="stylesheet" href="./index_files/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com/"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""><link href="./index_files/css2" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <img class="logo" src="./index_files/logo-alura.png" alt="Logo de Alura">
+        </header>
+
+        <main>
+            <section>
+                <textarea class="entrada-texto" cols="30" rows="10" placeholder="Ingrese el texto aquí" autofocus=""></textarea>
+                <div>
+                    <h6 class="restriccion">⚠ Solo letras minúsculas y sin acentos.</h6>
+                </div>
+                <div class="botones">
+                    <button name="encriptar" class="encriptar" onclick="encriptar()">Encriptar</button>
+                    <button name="desencriptar" class="desencriptar" onclick="desencriptar()">Desencriptar</button>
+                </div>
+            </section>
+            <section>
+                <textarea class="salida-texto" cols="20" rows="10" disabled="" style="background: white;"></textarea>
+                <div class="dinamico">
+                    <h2 class="texto1" style="display: none;">Ningún mensaje fue encontrado</h2>
+                    <h3 class="texto2" style="display: none;">Ingresa el texto que desees encriptar o desencriptar.</h3>
+                    <button name="copiar" class="copiar" onclick="copiar()" style=""><span class="anuncio" style="display: none;">Texto copiado</span>Copiar</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p class="copyright">© Desarrollado por Frammy Ogando</p>
+        </footer>
+
+    
+
+    <script src="./index_files/script.js.descargar"></script>
+
+</body></html>

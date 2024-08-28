@@ -1,0 +1,106 @@
+var entradaTexto = document.querySelector(".entrada-texto");
+var salidaTexto = document.querySelector(".salida-texto");
+var seccionTexto1 = document.querySelector(".texto1");
+var seccionTexto2 = document.querySelector(".texto2");
+var btnCopiar = document.querySelector(".copiar");
+
+function validar(textoValidar){
+    const letras = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z","Á","É","Í","Ó","Ú","á","é","í","ó","ú"];
+    var conteo = 0;
+
+    for(var posicion = 0; posicion < textoValidar.length; posicion++){
+        for(var letra = 0; letra < letras.length; letra++){
+            if(textoValidar.charAt(posicion) == letras[letra]){
+                conteo++;
+            }
+        }
+    }
+    return conteo == 0;
+}
+
+function encriptar() {
+    var texto = entradaTexto.value;
+    var salida = "";
+    if(!validar(texto)){
+        alert("Texto invalido, verifique su texto.");
+        return;
+    }
+    for(var posicion = 0; posicion < texto.length; posicion++){
+        if(texto.charAt(posicion) == "a"){
+            salida += "ai";
+        } else if(texto.charAt(posicion) == "e"){
+            salida += "enter";
+        } else if(texto.charAt(posicion) == "i"){
+            salida += "imes";
+        } else if(texto.charAt(posicion) == "o"){
+            salida += "ober";
+        } else if(texto.charAt(posicion) == "u"){
+            salida += "ufat";
+        } else {
+            salida += texto.charAt(posicion);
+        }
+    }
+    entradaTexto.value = "";
+    salidaTexto.value = salida;
+    ocultar();
+}
+
+function desencriptar() {
+    var texto = entradaTexto.value;
+    var salida = "";
+    if(!validar(texto)){
+        alert("Texto invalido, verifique su texto.");
+        return;
+    }
+    for(var posicion = 0; posicion < texto.length; posicion++){
+        if(texto.charAt(posicion) == "a" && texto.charAt(posicion + 1) == "i"){
+            salida += "a";
+            posicion++;
+        } else if(texto.charAt(posicion) == "e" && texto.slice(posicion, posicion + 5) == "enter"){
+            salida += "e";
+            posicion += 4;
+        } else if(texto.charAt(posicion) == "i" && texto.slice(posicion, posicion + 4) == "imes"){
+            salida += "i";
+            posicion += 3;
+        } else if(texto.charAt(posicion) == "o" && texto.slice(posicion, posicion + 4) == "ober"){
+            salida += "o";
+            posicion += 3;
+        } else if(texto.charAt(posicion) == "u" && texto.slice(posicion, posicion + 4) == "ufat"){
+            salida += "u";
+            posicion += 3;
+        } else {
+            salida += texto.charAt(posicion);
+        }
+    }
+    entradaTexto.value = "";
+    salidaTexto.value = salida;
+    ocultar();
+}
+
+function ocultar(){
+    salidaTexto.style.background = "white";
+    seccionTexto1.style.display = "none";
+    seccionTexto2.style.display = "none";
+    btnCopiar.style.display = "";
+}
+
+function mostrar(){
+    salidaTexto.style.background = "#FFF no-repeat center url(imagenes/buscar.png)";
+    seccionTexto1.style.display = "";
+    seccionTexto2.style.display = "";
+    btnCopiar.style.display = "none";
+}
+
+function copiar(){
+    var copia = salidaTexto.value;
+    navigator.clipboard.writeText(copia);
+    
+    var anuncio = document.querySelector(".anuncio");
+    anuncio.textContent = "Texto copiado";
+    anuncio.style.display = "block";
+    setTimeout(() => {
+        anuncio.style.display = "none";
+    }, 950);
+    salidaTexto.value = "";
+    mostrar();
+}
